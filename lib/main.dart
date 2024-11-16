@@ -5,7 +5,6 @@ import 'package:hepato_diagnosis/constant.dart';
 import 'package:hepato_diagnosis/pages/first_board_page.dart';
 import 'package:hepato_diagnosis/pages/log_in_page.dart';
 import 'package:hepato_diagnosis/pages/on_board_screen.dart';
-import 'package:hepato_diagnosis/pages/open_app_page.dart';
 import 'package:hepato_diagnosis/pages/register_page.dart';
 import 'package:hepato_diagnosis/pages/scound_board_page.dart';
 import 'package:hepato_diagnosis/pages/third_board_page.dart';

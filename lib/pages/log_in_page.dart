@@ -20,7 +20,7 @@ class LogInPage extends StatelessWidget {
             children: [
               Container(
                 decoration: const BoxDecoration(color: kPrimaryColor),
-                height: 220.h,
+                height: 230.h,
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset('assets/splash.png'),
               ),
