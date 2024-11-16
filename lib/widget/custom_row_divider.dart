@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomRowDivider extends StatelessWidget {
   const CustomRowDivider({
@@ -10,22 +11,22 @@ class CustomRowDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
+        Expanded(
           child: Divider(
-            thickness: 1,
+            thickness: 1.h,
             color: Colors.grey,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Text(
             text,
-            style: const TextStyle(color: Colors.grey, fontSize: 16),
+            style: TextStyle(color: Colors.grey, fontSize: 16.sp),
           ),
         ),
-        const Expanded(
+        Expanded(
           child: Divider(
-            thickness: 1,
+            thickness: 1.h,
             color: Colors.grey,
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 
 class CustomInkWellLogIn extends StatelessWidget {
@@ -17,25 +18,26 @@ class CustomInkWellLogIn extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(left: 15),
+        padding: EdgeInsets.only(left: 15.w),
         child: Container(
-          height: 50,
-          width: 110,
+          height: 50.h,
+          width: 110.w,
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
                   color: borderColor == null ? Colors.white : kPrimaryColor,
-                  width: 3),
+                  width: 3.w),
             ),
           ),
           child: Center(
-              child: Text(
-            text,
-            style: TextStyle(
-                color: borderColor == null ? Colors.grey : kPrimaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 16),
-          )),
+            child: Text(
+              text,
+              style: TextStyle(
+                  color: borderColor == null ? Colors.grey : kPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.sp),
+            ),
+          ),
         ),
       ),
     );

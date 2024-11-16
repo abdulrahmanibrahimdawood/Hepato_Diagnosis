@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 
 class ScoundPage extends StatelessWidget {
@@ -17,24 +18,29 @@ class ScoundPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Image.asset(
-                'assets/one.png',
+                'assets/two.png',
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 2.5,
               ),
             ],
           ),
-          const Text(
-            'Fast and Reliable Results',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          SizedBox(
+            height: 15.h,
           ),
-          const SizedBox(
-            height: 10,
+          Text(
+            'Fast and Reliable Results',
+            style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 10.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
               textAlign: TextAlign.center,
               "We provide quick analysis with high accuracy, ensuring you get the information you need at the right time with minimal effort.",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black.withOpacity(.3),
               ),

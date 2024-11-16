@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 import 'package:hepato_diagnosis/widget/custom_buttom_log_in.dart';
 import 'package:hepato_diagnosis/widget/custom_inkwell_login.dart';
@@ -19,17 +20,17 @@ class Register extends StatelessWidget {
             children: [
               Container(
                 decoration: const BoxDecoration(color: kPrimaryColor),
-                height: 300,
+                height: 220.h,
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset('assets/splash.png'),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: EdgeInsets.symmetric(horizontal: 30.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -46,29 +47,29 @@ class Register extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 25.h),
                     const CustomTextFormFeild(
                       hintText: 'Email',
                       icon: Icons.email,
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     const CustomTextFormFeild(
                         hintText: 'Password', icon: Icons.lock),
-                    const SizedBox(height: 10),
-                    const Align(
+                    SizedBox(height: 10.h),
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forget Password !",
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     const CustomButtomLogIn(text: 'Sign in'),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     const CustomRowDivider(
                       text: 'Or Sign up with',
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     const RowIconsLogIn(),
                   ],
                 ),

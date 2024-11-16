@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 
 class ThirdPage extends StatelessWidget {
@@ -17,24 +18,29 @@ class ThirdPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Image.asset(
-                'assets/one.png',
+                'assets/three.png',
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 2.5,
               ),
             ],
           ),
-          const Text(
-            'Start Your Health Journey',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          SizedBox(
+            height: 15.h,
           ),
-          const SizedBox(
-            height: 10,
+          Text(
+            'Start Your Health Journey',
+            style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 10.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
               textAlign: TextAlign.center,
               "Take a step towards a healthier life now and begin your journey with us to achieve a better, brighter health future.",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black.withOpacity(.3),
               ),

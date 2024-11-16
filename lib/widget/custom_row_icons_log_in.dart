@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RowIconsLogIn extends StatelessWidget {
@@ -6,24 +7,24 @@ class RowIconsLogIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ContainerIcons(
+        const ContainerIcons(
           icon: FontAwesomeIcons.google,
           color: Colors.red,
         ),
         SizedBox(
-          width: 30,
+          width: 30.w,
         ),
-        ContainerIcons(
+        const ContainerIcons(
           icon: FontAwesomeIcons.facebook,
           color: Color(0XFF1977F3),
         ),
         SizedBox(
-          width: 30,
+          width: 30.w,
         ),
-        ContainerIcons(
+        const ContainerIcons(
           icon: Icons.apple,
           color: Colors.black,
         ),
@@ -45,17 +46,17 @@ class ContainerIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      width: 70,
+      height: 50.h,
+      width: 50.w,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black.withOpacity(0.2)),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
       ),
       child: IconButton(
         onPressed: onPressed,
         icon: FaIcon(
           icon,
-          size: 50,
+          size: 35.w,
           color: color,
         ),
       ),

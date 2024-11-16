@@ -27,7 +27,7 @@ class HepatoDiagnosis extends StatelessWidget {
         return MaterialApp(
           routes: {
             kOnBoardScreenState: (context) => const OnBoardScreenState(),
-            kOpenAppPage: (context) => const OpenAppPage(),
+            // kOpenAppPage: (context) => const OpenAppPage(),
             kFirstPage: (context) => const FirstPage(),
             kScoundPage: (context) => const ScoundPage(),
             kThirdPage: (context) => const ThirdPage(),
@@ -41,7 +41,7 @@ class HepatoDiagnosis extends StatelessWidget {
             duration: 2000,
             splash: Center(
               child: Transform.scale(
-                scale: 2.5,
+                scale: 2.5.w,
                 child: Image.asset(
                   'assets/splash.png',
                 ),

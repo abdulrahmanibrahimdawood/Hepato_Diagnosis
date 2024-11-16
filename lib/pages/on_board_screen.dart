@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 import 'package:hepato_diagnosis/pages/first_board_page.dart';
 import 'package:hepato_diagnosis/pages/scound_board_page.dart';
@@ -44,22 +45,22 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                     CustomIndecator(
                       active: index == 0,
                     ),
-                    const SizedBox(
-                      width: 5,
+                    SizedBox(
+                      width: 5.w,
                     ),
                     CustomIndecator(
                       active: index == 1,
                     ),
-                    const SizedBox(
-                      width: 5,
+                    SizedBox(
+                      width: 5.w,
                     ),
                     CustomIndecator(
                       active: index == 2,
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: 25.h,
                 ),
                 InkWell(
                   onTap: () {
@@ -70,24 +71,24 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                             curve: Curves.linear);
                   },
                   child: Container(
-                    height: 50,
-                    width: 370,
+                    height: 45.h,
+                    width: 330.w,
                     decoration: BoxDecoration(
                         color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(8)),
+                        borderRadius: BorderRadius.circular(8.r)),
                     child: Center(
                       child: Text(
                         index == 2 ? 'Start' : 'Next',
-                        style: const TextStyle(
-                            fontSize: 20,
+                        style: TextStyle(
+                            fontSize: 20.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 15.h,
                 ),
                 InkWell(
                   onTap: () {
@@ -97,29 +98,30 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                   },
                   child: index == 0
                       ? Container(
-                          height: 50,
-                          width: 370,
+                          height: 45.h,
+                          width: 330.w,
                         )
                       : Container(
-                          height: 50,
-                          width: 370,
+                          height: 45.h,
+                          width: 330.w,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: .5),
-                            borderRadius: BorderRadius.circular(8),
+                            border:
+                                Border.all(color: Colors.black, width: .5.w),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               'Back',
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.bold,
                                   color: kPrimaryColor),
                             ),
                           ),
                         ),
                 ),
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: 60.h,
                 ),
               ],
             ),
@@ -127,11 +129,9 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
+                      Text(
                         'Skip',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Colors.white, fontSize: 12.sp),
                       ),
                       IconButton(
                         onPressed: () {
@@ -169,10 +169,10 @@ class CustomIndecator extends StatelessWidget {
       duration: const Duration(milliseconds: 250),
       decoration: BoxDecoration(
         color: active ? kPrimaryColor : Colors.grey,
-        borderRadius: BorderRadius.circular(100),
+        borderRadius: BorderRadius.circular(100.r),
       ),
-      height: 10,
-      width: active ? 30 : 10,
+      height: 8.h,
+      width: active ? 24.w : 8.w,
     );
   }
 }
