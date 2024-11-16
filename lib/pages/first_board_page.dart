@@ -25,7 +25,7 @@ class FirstPage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
