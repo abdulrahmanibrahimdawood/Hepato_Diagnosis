@@ -30,6 +30,7 @@ class ThirdPage extends StatelessWidget {
           Text(
             'Start Your Health Journey',
             style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 10.h,

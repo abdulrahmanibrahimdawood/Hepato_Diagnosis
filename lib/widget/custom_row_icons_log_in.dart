@@ -54,10 +54,12 @@ class ContainerIcons extends StatelessWidget {
       ),
       child: IconButton(
         onPressed: onPressed,
-        icon: FaIcon(
-          icon,
-          size: 35.w,
-          color: color,
+        icon: Center(
+          child: FaIcon(
+            icon,
+            size: 35.w,
+            color: color,
+          ),
         ),
       ),
     );

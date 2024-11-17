@@ -31,16 +31,17 @@ class FirstPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Welcome to the ',
+                'Welcome to the HDx App',
                 style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
-              Text(
-                'HDx App',
-                style: TextStyle(
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.bold,
-                    color: kPrimaryColor),
-              ),
+              // Text(
+              //   'HDx App',
+              //   style: TextStyle(
+              //       fontSize: 32.sp,
+              //       fontWeight: FontWeight.bold,
+              //       color: kPrimaryColor),
+              // ),
             ],
           ),
           SizedBox(

@@ -30,6 +30,7 @@ class ScoundPage extends StatelessWidget {
           Text(
             'Fast and Reliable Results',
             style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 10.h,
