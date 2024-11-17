@@ -55,4 +55,3 @@ class HepatoDiagnosis extends StatelessWidget {
     );
   }
 }
-//abdo

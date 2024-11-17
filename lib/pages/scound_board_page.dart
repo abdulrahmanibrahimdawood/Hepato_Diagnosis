@@ -20,12 +20,12 @@ class ScoundPage extends StatelessWidget {
               Image.asset(
                 'assets/two.png',
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.5,
+                height: MediaQuery.of(context).size.height * 0.35,
               ),
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: MediaQuery.of(context).size.height * 0.03,
           ),
           Text(
             'Fast and Reliable Results',
@@ -33,13 +33,13 @@ class ScoundPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 10.h,
+            height: MediaQuery.of(context).size.height * 0.015,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50.w),
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Text(
-              textAlign: TextAlign.center,
               "We provide quick analysis with high accuracy, ensuring you get the information you need at the right time with minimal effort.",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,

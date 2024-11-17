@@ -20,12 +20,12 @@ class ThirdPage extends StatelessWidget {
               Image.asset(
                 'assets/three.png',
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.5,
+                height: MediaQuery.of(context).size.height * 0.35,
               ),
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: MediaQuery.of(context).size.height * 0.03,
           ),
           Text(
             'Start Your Health Journey',
@@ -33,10 +33,10 @@ class ThirdPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 10.h,
+            height: MediaQuery.of(context).size.height * 0.015,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50.w),
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Text(
               textAlign: TextAlign.center,
               "Take a step towards a healthier life now and begin your journey with us to achieve a better, brighter health future.",

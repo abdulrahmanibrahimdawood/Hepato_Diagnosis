@@ -60,7 +60,7 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                   ],
                 ),
                 SizedBox(
-                  height: 25.h,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 InkWell(
                   onTap: () {
@@ -71,8 +71,8 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                             curve: Curves.linear);
                   },
                   child: Container(
-                    height: 45.h,
-                    width: 330.w,
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
                         color: kPrimaryColor,
                         borderRadius: BorderRadius.circular(8.r)),
@@ -88,7 +88,7 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                   ),
                 ),
                 SizedBox(
-                  height: 15.h,
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 InkWell(
                   onTap: () {
@@ -98,12 +98,12 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                   },
                   child: index == 0
                       ? Container(
-                          height: 45.h,
-                          width: 330.w,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.9,
                         )
                       : Container(
-                          height: 45.h,
-                          width: 330.w,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.9,
                           decoration: BoxDecoration(
                             border:
                                 Border.all(color: Colors.black, width: .5.w),
@@ -121,7 +121,7 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                         ),
                 ),
                 SizedBox(
-                  height: 60.h,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
               ],
             ),
@@ -152,7 +152,10 @@ class _OnBoardScreenStateState extends State<OnBoardScreenState> {
                       )
                     ],
                   )
-                : const Text(''),
+                : Text(
+                    '',
+                    style: TextStyle(fontSize: 1.sp),
+                  ),
           ],
         ),
       ),
@@ -171,8 +174,10 @@ class CustomIndecator extends StatelessWidget {
         color: active ? kPrimaryColor : Colors.grey,
         borderRadius: BorderRadius.circular(100.r),
       ),
-      height: 8.h,
-      width: active ? 24.w : 8.w,
+      height: MediaQuery.of(context).size.height * 0.01,
+      width: active
+          ? MediaQuery.of(context).size.height * 0.03
+          : MediaQuery.of(context).size.height * 0.01,
     );
   }
 }

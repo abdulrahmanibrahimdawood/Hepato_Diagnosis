@@ -20,32 +20,20 @@ class FirstPage extends StatelessWidget {
               Image.asset(
                 'assets/one.png',
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.3,
+                height: MediaQuery.of(context).size.height * 0.35,
               ),
             ],
           ),
           SizedBox(
-            height: 10.h,
+            height: MediaQuery.of(context).size.height * 0.03,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Welcome to the HDx App',
-                style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              // Text(
-              //   'HDx App',
-              //   style: TextStyle(
-              //       fontSize: 32.sp,
-              //       fontWeight: FontWeight.bold,
-              //       color: kPrimaryColor),
-              // ),
-            ],
+          Text(
+            'Welcome to the HDx App',
+            style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 10.h,
+            height: MediaQuery.of(context).size.height * 0.015,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
