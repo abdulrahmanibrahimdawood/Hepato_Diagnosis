@@ -21,7 +21,7 @@ class CustomRowDivider extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Text(
             text,
-            style: TextStyle(color: Colors.grey, fontSize: 16.sp),
+            style: TextStyle(color: Colors.grey, fontSize: 14.sp),
           ),
         ),
         Expanded(

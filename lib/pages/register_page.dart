@@ -47,7 +47,7 @@ class Register extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 25.h),
+                    SizedBox(height: 15.h),
                     const CustomTextFormFeild(
                       hintText: 'Email',
                       icon: Icons.email,
@@ -60,16 +60,16 @@ class Register extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forget Password !",
-                        style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+                        style: TextStyle(fontSize: 14.sp, color: Colors.grey),
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 10.h),
                     const CustomButtomLogIn(text: 'Sign in'),
                     SizedBox(height: 20.h),
                     const CustomRowDivider(
                       text: 'Or Sign up with',
                     ),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 20.h),
                     const RowIconsLogIn(),
                   ],
                 ),

@@ -47,7 +47,7 @@ class LogInPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 25.h,
+                      height: 15.h,
                     ),
                     const CustomTextFormFeild(
                       icon: Icons.email,
@@ -71,7 +71,7 @@ class LogInPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20.h,
+                      height: 10.h,
                     ),
                     const CustomButtomLogIn(
                       text: 'Sign in',
@@ -83,7 +83,7 @@ class LogInPage extends StatelessWidget {
                       text: 'Or Sign in with',
                     ),
                     SizedBox(
-                      height: 30.h,
+                      height: 20.h,
                     ),
                     const RowIconsLogIn(),
                   ],
