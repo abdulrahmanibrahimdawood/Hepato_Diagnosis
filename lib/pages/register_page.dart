@@ -22,7 +22,10 @@ class Register extends StatelessWidget {
                 decoration: const BoxDecoration(color: kPrimaryColor),
                 height: 230.h,
                 width: MediaQuery.of(context).size.width,
-                child: Image.asset('assets/splash.png'),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.h),
+                  child: Image.asset('assets/splash.png'),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w),

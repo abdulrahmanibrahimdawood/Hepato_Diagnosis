@@ -52,14 +52,11 @@ class ContainerIcons extends StatelessWidget {
         border: Border.all(color: Colors.black.withOpacity(0.2)),
         borderRadius: BorderRadius.circular(8.r),
       ),
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Center(
-          child: FaIcon(
-            icon,
-            size: 35.w,
-            color: color,
-          ),
+      child: Center(
+        child: FaIcon(
+          icon,
+          size: 25.w,
+          color: color,
         ),
       ),
     );
