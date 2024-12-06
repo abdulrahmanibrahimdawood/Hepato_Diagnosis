@@ -10,3 +10,5 @@ const kLogInPage = 'LogInPage';
 const kRegister = 'Register';
 const kHomePage = 'HomePage';
 const kAnalysisPage = 'AnalysisPage';
+const kDoctorsPage = 'DoctorsPage';
+const kQuestionsPage = 'QuestionsPage';

@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 15),
-              const DevicesListView(),
+              const CustomDevicesListView(),
               const SizedBox(
                 height: 15,
               ),

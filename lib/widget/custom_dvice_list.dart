@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hepato_diagnosis/widget/custom_body_dvice.dart';
 
-class DevicesListView extends StatelessWidget {
-  const DevicesListView({
+class CustomDevicesListView extends StatelessWidget {
+  const CustomDevicesListView({
     super.key,
   });
 

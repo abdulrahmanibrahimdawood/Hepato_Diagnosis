@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
 import 'package:hepato_diagnosis/pages/analysis_page.dart';
+import 'package:hepato_diagnosis/pages/doctors_page.dart';
 import 'package:hepato_diagnosis/pages/first_board_page.dart';
 import 'package:hepato_diagnosis/pages/home_page.dart';
 import 'package:hepato_diagnosis/pages/log_in_page.dart';
 import 'package:hepato_diagnosis/pages/on_board_screen.dart';
+import 'package:hepato_diagnosis/pages/questions_page.dart';
 import 'package:hepato_diagnosis/pages/register_page.dart';
 import 'package:hepato_diagnosis/pages/scound_board_page.dart';
 import 'package:hepato_diagnosis/pages/third_board_page.dart';
@@ -36,10 +38,12 @@ class HepatoDiagnosis extends StatelessWidget {
             kRegister: (context) => const Register(),
             kHomePage: (context) => const HomePage(),
             kAnalysisPage: (context) => const AnalysisPage(),
+            kQuestionsPage: (context) => const QuesthionsPage(),
+            kDoctorsPage: (context) => const DoctorsPage(),
           },
           debugShowCheckedModeBanner: false,
           home: const Scaffold(
-            body: HomePage(),
+            body: QuesthionsPage(),
             //   body: AnimatedSplashScreen(
             //     duration: 2000,
             //     splash: Center(
