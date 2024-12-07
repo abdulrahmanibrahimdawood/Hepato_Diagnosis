@@ -43,7 +43,7 @@ class HepatoDiagnosis extends StatelessWidget {
           },
           debugShowCheckedModeBanner: false,
           home: const Scaffold(
-            body: QuesthionsPage(),
+            body: DoctorsPage(),
             //   body: AnimatedSplashScreen(
             //     duration: 2000,
             //     splash: Center(

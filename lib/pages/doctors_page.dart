@@ -17,11 +17,19 @@ class DoctorsPage extends StatelessWidget {
             CustomAppBar(
               text1: "Doctors List",
             ),
-            CustomSearchTextFormFeild(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              child: CustomSearchTextFormFeild(),
+            ),
             SizedBox(
               height: 20,
             ),
-            CustomDoctorsListView(),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: CustomDoctorsListView(),
+              ),
+            ),
           ],
         ),
       ),

@@ -8,22 +8,20 @@ class CustomDoctorsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: 10,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: ((context, index) {
-          return const Column(
-            children: [
-              CustomBodyDoctorCard(),
-              SizedBox(
-                height: 15,
-              )
-            ],
-          );
-        }),
-      ),
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: 10,
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: ((context, index) {
+        return const Column(
+          children: [
+            CustomBodyDoctorCard(),
+            SizedBox(
+              height: 15,
+            )
+          ],
+        );
+      }),
     );
   }
 }
