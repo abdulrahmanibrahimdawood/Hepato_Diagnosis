@@ -14,14 +14,17 @@ class QuesthionsPage extends StatelessWidget {
         body: Column(
           children: [
             CustomAppBar(
-              text1: "Questions List",
+              text1: "Questions List", // شريط علوي مع النص
             ),
             SizedBox(
-              height: 12,
+              height: 12, // مسافة فارغة
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 12),
-              child: CustomQuestionsListView(),
+            Expanded(
+              // تعديل: وضع Expanded مباشرة حول CustomQuestionsListView لتجنب الأخطاء
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 12),
+                child: CustomQuestionsListView(),
+              ),
             ),
           ],
         ),

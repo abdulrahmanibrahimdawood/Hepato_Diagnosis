@@ -8,21 +8,20 @@ class CustomQuestionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: ((context, index) {
-          return const Column(
-            children: [
-              CustomBodyQuestion(),
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          );
-        }),
-      ),
+    return ListView.builder(
+      // إزالة Expanded لأنه غير ضروري هنا
+      itemCount: 10,
+      physics: const BouncingScrollPhysics(), // حركة تمرير ناعمة
+      itemBuilder: ((context, index) {
+        return const Column(
+          children: [
+            CustomBodyQuestion(), // سؤال مخصص
+            SizedBox(
+              height: 15, // مسافة بين الأسئلة
+            ),
+          ],
+        );
+      }),
     );
   }
 }
