@@ -7,28 +7,31 @@ class RowIconsLogIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const ContainerIcons(
-          icon: FontAwesomeIcons.google,
-          color: Colors.red,
-        ),
-        SizedBox(
-          width: 30.w,
-        ),
-        const ContainerIcons(
-          icon: FontAwesomeIcons.facebook,
-          color: Color(0XFF1977F3),
-        ),
-        SizedBox(
-          width: 30.w,
-        ),
-        const ContainerIcons(
-          icon: Icons.apple,
-          color: Colors.black,
-        ),
-      ],
+    return SizedBox(
+      height: 70.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const ContainerIcons(
+            icon: FontAwesomeIcons.google,
+            color: Colors.red,
+          ),
+          SizedBox(
+            width: 30.w,
+          ),
+          const ContainerIcons(
+            icon: FontAwesomeIcons.facebook,
+            color: Color(0XFF1977F3),
+          ),
+          SizedBox(
+            width: 30.w,
+          ),
+          const ContainerIcons(
+            icon: Icons.apple,
+            color: Colors.black,
+          ),
+        ],
+      ),
     );
   }
 }
