@@ -30,15 +30,18 @@ class CustomBodyQuestion extends StatelessWidget {
         ),
         child: const Column(
           children: [
-            Text(
-              'What treatment options are',
-              style: TextStyle(
-                  color: Color(0xFF4781C0),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Text(
+                'What treatment options are',
+                style: TextStyle(
+                    color: Color(0xFF4781C0),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             SizedBox(
-              height: 19,
+              height: 10,
             ),
             Text(
               'Options incclude dialysis or kidney',

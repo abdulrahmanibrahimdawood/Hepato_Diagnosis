@@ -17,9 +17,9 @@ class _CustomAnalysisTextFormFeildState
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Align(
-          alignment: Alignment.topLeft,
           child: Text(
             widget.data,
             style: TextStyle(
@@ -35,7 +35,7 @@ class _CustomAnalysisTextFormFeildState
         Align(
           alignment: Alignment.topLeft,
           child: SizedBox(
-            height: 45,
+            height: 40,
             width: 80,
             child: TextFormField(
               decoration: InputDecoration(

@@ -18,18 +18,39 @@ class AnalysisPage extends StatelessWidget {
             CustomAppBar(
               text1: "Analysis",
             ),
-            Column(
-              children: [
-                CustomTextDiagnosis(
-                    sufferFrom: 'sufferFrom', analysis: 'analysis'),
-                SizedBox(
-                  height: 5,
-                ),
-                CustomAnalysisTextFormFeild(
-                  data: "Age",
-                  color: Colors.black,
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Column(
+                children: [
+                  CustomTextDiagnosis(
+                      sufferFrom: 'IF you suffer from upper abdominal pain :- ',
+                      analysis: 'Alkphos Alkaline Phosphatase. '),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    children: [
+                      CustomAnalysisTextFormFeild(
+                        data: "Age",
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      CustomAnalysisTextFormFeild(
+                        data: "Gender",
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      CustomAnalysisTextFormFeild(
+                        data: "AAP",
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             )
           ],
         ),
