@@ -23,10 +23,10 @@ class AnalysisPage extends StatelessWidget {
               child: Column(
                 children: [
                   CustomTextDiagnosis(
-                      sufferFrom: 'IF you suffer from upper abdominal pain :- ',
+                      sufferFrom: 'IF you suffer from upper abdominal pain :-',
                       analysis: 'Alkphos Alkaline Phosphatase. '),
                   SizedBox(
-                    height: 5,
+                    height: 15,
                   ),
                   Row(
                     children: [
@@ -46,6 +46,64 @@ class AnalysisPage extends StatelessWidget {
                       ),
                       CustomAnalysisTextFormFeild(
                         data: "AAP",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+//==========================================================================================================
+                  CustomTextDiagnosis(
+                      sufferFrom:
+                          'IF you suffer from anorexia, vomiting, fatigue :-',
+                      analysis: 'AlT , AST. '),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      CustomAnalysisTextFormFeild(
+                        data: "ALT",
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      CustomAnalysisTextFormFeild(
+                        data: "AST",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+//==========================================================================================================
+                  CustomTextDiagnosis(
+                      sufferFrom: 'IF you suffer from jaundice :-',
+                      analysis: 'Direct Bilirubin.'),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      CustomAnalysisTextFormFeild(
+                        data: "DBIL",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+//==========================================================================================================
+                  CustomTextDiagnosis(
+                      sufferFrom: 'IF you suffer from edema lower limb :-',
+                      analysis: 'Albumin.'),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      CustomAnalysisTextFormFeild(
+                        data: "ALP",
                       ),
                     ],
                   ),

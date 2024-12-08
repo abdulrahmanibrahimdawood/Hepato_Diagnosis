@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hepato_diagnosis/constant.dart';
 
 class CustomSearchTextFormFeild extends StatelessWidget {
   const CustomSearchTextFormFeild({
@@ -19,7 +20,16 @@ class CustomSearchTextFormFeild extends StatelessWidget {
           hintText: 'Search',
           contentPadding: const EdgeInsets.symmetric(vertical: 10),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(color: kPrimaryColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(color: kPrimaryColor),
           ),
         ),
       ),

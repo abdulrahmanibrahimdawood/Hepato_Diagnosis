@@ -36,7 +36,7 @@ class _CustomAnalysisTextFormFeildState
           alignment: Alignment.topLeft,
           child: SizedBox(
             height: 40,
-            width: 80,
+            width: 90,
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
