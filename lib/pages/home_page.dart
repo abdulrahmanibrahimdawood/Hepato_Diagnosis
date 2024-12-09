@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(height: 700, child: CustomBodyHomePage()),
-              BodyBottomAppBar(),
+              // BodyBottomAppBar(),
             ],
           ),
         ),

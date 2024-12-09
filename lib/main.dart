@@ -12,6 +12,7 @@ import 'package:hepato_diagnosis/pages/questions_page.dart';
 import 'package:hepato_diagnosis/pages/register_page.dart';
 import 'package:hepato_diagnosis/pages/scound_board_page.dart';
 import 'package:hepato_diagnosis/pages/third_board_page.dart';
+import 'package:hepato_diagnosis/widget/custom_buttom_app_bar.dart';
 
 void main() {
   runApp(const HepatoDiagnosis());
@@ -40,10 +41,12 @@ class HepatoDiagnosis extends StatelessWidget {
             kAnalysisPage: (context) => const AnalysisPage(),
             kQuestionsPage: (context) => const QuesthionsPage(),
             kDoctorsPage: (context) => const DoctorsPage(),
+            kCustomBottomAppBarIcons: (context) =>
+                const CustomBottomAppBarIcons(),
           },
           debugShowCheckedModeBanner: false,
           home: const Scaffold(
-            body: HomePage(),
+            body: CustomBottomAppBarIcons(),
             //   body: AnimatedSplashScreen(
             //     duration: 2000,
             //     splash: Center(
