@@ -61,13 +61,18 @@ class CustomBodyHomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 color: kPrimaryColor,
               ),
-              child: const Center(
-                child: Text(
-                  'Go to analysis',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 24),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, kAnalysisPage);
+                  },
+                  child: const Text(
+                    'Go to analysis',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 24),
+                  ),
                 ),
               ),
             ),
