@@ -26,28 +26,28 @@ class _MainPageState extends State<CustomBottomAppBarIcons> {
   static const List<BottomNavigationBarItem> _navigationItems = [
     BottomNavigationBarItem(
       icon: FaIcon(
-        FontAwesomeIcons.house,
+        FontAwesomeIcons.houseChimney,
         size: 28,
       ),
       label: 'Home',
     ),
     BottomNavigationBarItem(
       icon: FaIcon(
-        FontAwesomeIcons.notesMedical,
+        FontAwesomeIcons.magnifyingGlass,
         size: 28,
       ),
       label: 'Analysis',
     ),
     BottomNavigationBarItem(
       icon: FaIcon(
-        FontAwesomeIcons.clipboardQuestion,
+        FontAwesomeIcons.circleQuestion,
         size: 28,
       ),
       label: 'Questions',
     ),
     BottomNavigationBarItem(
       icon: FaIcon(
-        FontAwesomeIcons.userDoctor,
+        FontAwesomeIcons.stethoscope,
         size: 28,
       ),
       label: 'Doctors',
