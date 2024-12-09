@@ -22,11 +22,17 @@ class CustomBottomAppBarIcons extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onPressed,
-          icon: FaIcon(icon, color: isActive ? kPrimaryColor : Colors.grey),
+          icon: FaIcon(
+            icon,
+            color: isActive ? kPrimaryColor : Colors.grey,
+            size: 28,
+          ),
         ),
         Text(
           text,
-          style: TextStyle(color: isActive ? kPrimaryColor : Colors.grey),
+          style: TextStyle(
+              color: isActive ? kPrimaryColor : Colors.grey,
+              fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -49,7 +55,7 @@ class _BodyBottomAppBarState extends State<BodyBottomAppBar> {
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -59,7 +65,7 @@ class _BodyBottomAppBarState extends State<BodyBottomAppBar> {
                   activeIndex = 0;
                 });
               },
-              icon: FontAwesomeIcons.house,
+              icon: FontAwesomeIcons.houseChimneyMedical,
               text: 'Home',
               isActive: activeIndex == 0,
             ),
@@ -69,8 +75,8 @@ class _BodyBottomAppBarState extends State<BodyBottomAppBar> {
                   activeIndex = 1;
                 });
               },
-              icon: Icons.category,
-              text: 'Categories',
+              icon: Icons.analytics_sharp,
+              text: 'Analysis',
               isActive: activeIndex == 1,
             ),
             CustomBottomAppBarIcons(
@@ -79,8 +85,8 @@ class _BodyBottomAppBarState extends State<BodyBottomAppBar> {
                   activeIndex = 2;
                 });
               },
-              icon: Icons.shopping_basket,
-              text: 'Shopping',
+              icon: Icons.question_answer,
+              text: 'Questions',
               isActive: activeIndex == 2,
             ),
             CustomBottomAppBarIcons(
@@ -89,8 +95,8 @@ class _BodyBottomAppBarState extends State<BodyBottomAppBar> {
                   activeIndex = 3;
                 });
               },
-              icon: FontAwesomeIcons.user,
-              text: 'Profile',
+              icon: FontAwesomeIcons.stethoscope,
+              text: 'Doctors',
               isActive: activeIndex == 3,
             ),
           ],
