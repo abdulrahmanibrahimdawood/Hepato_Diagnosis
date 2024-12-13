@@ -1,7 +1,9 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hepato_diagnosis/constant.dart';
+import 'package:hepato_diagnosis/firebase_options.dart';
 import 'package:hepato_diagnosis/pages/analysis_page.dart';
 import 'package:hepato_diagnosis/pages/doctors_page.dart';
 import 'package:hepato_diagnosis/pages/first_board_page.dart';
@@ -14,7 +16,10 @@ import 'package:hepato_diagnosis/pages/scound_board_page.dart';
 import 'package:hepato_diagnosis/pages/third_board_page.dart';
 import 'package:hepato_diagnosis/widget/custom_buttom_app_bar.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const HepatoDiagnosis());
 }
 

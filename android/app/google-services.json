@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629053169089",
+    "project_id": "hepatodiagnosis",
+    "storage_bucket": "hepatodiagnosis.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629053169089:android:0f528e9ed64134a227e340",
+        "android_client_info": {
+          "package_name": "com.example.hepatn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO3nE5G48QTnq5-BGReaVsFE_RjpVDg6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
