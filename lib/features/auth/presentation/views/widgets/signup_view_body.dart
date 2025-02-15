@@ -1,67 +1,103 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_feild.dart';
+import 'package:e_commerce/features/auth/presentation/cubits/signup_cupit/cubit/signup_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/have_an_account_widget.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/terms_and_condations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignupViewBody extends StatelessWidget {
+class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
 
+  @override
+  State<SignupViewBody> createState() => _SignupViewBodyState();
+}
+
+class _SignupViewBodyState extends State<SignupViewBody> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  late String email, userName, password;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: khorizontalPadding),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 24,
-          ),
-          const CustomTextFormFeild(
-            icon: Icon(
-              Icons.person,
-              color: Colors.blueGrey,
+      child: Form(
+        key: formKey,
+        autovalidateMode: autovalidateMode,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 24,
             ),
-            textInputType: TextInputType.name,
-            hintText: 'Name',
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const CustomTextFormFeild(
-            icon: Icon(
-              Icons.email,
-              color: Colors.blueGrey,
+            CustomTextFormFeild(
+              onSaved: (value) {
+                userName = value!;
+              },
+              icon: const Icon(
+                Icons.person,
+                color: Colors.blueGrey,
+              ),
+              textInputType: TextInputType.name,
+              hintText: 'Name',
             ),
-            textInputType: TextInputType.emailAddress,
-            hintText: 'Email',
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const CustomTextFormFeild(
-            suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blueGrey),
-            icon: Icon(Icons.lock, color: Colors.blueGrey),
-            textInputType: TextInputType.visiblePassword,
-            hintText: 'Password',
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const TermsAndCondationsWidgets(),
-          const SizedBox(
-            height: 30,
-          ),
-          CustomButton(
-            text: 'Create an account',
-            onPressed: () {},
-          ),
-          const SizedBox(
-            height: 26,
-          ),
-          const HaveAnAccountWidget()
-        ],
+            const SizedBox(
+              height: 16,
+            ),
+            CustomTextFormFeild(
+              onSaved: (value) {
+                email = value!;
+              },
+              icon: const Icon(
+                Icons.email,
+                color: Colors.blueGrey,
+              ),
+              textInputType: TextInputType.emailAddress,
+              hintText: 'Email',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomTextFormFeild(
+              onSaved: (value) {
+                password = value!;
+              },
+              suffixIcon:
+                  const Icon(Icons.remove_red_eye, color: Colors.blueGrey),
+              icon: const Icon(Icons.lock, color: Colors.blueGrey),
+              textInputType: TextInputType.visiblePassword,
+              hintText: 'Password',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            const TermsAndCondationsWidgets(),
+            const SizedBox(
+              height: 30,
+            ),
+            CustomButton(
+              text: 'Create an account',
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  context.read()<SignupCubit>().createUserWithEmailAndPassword(
+                      email, password, userName);
+                } else {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                }
+              },
+            ),
+            const SizedBox(
+              height: 26,
+            ),
+            const HaveAnAccountWidget()
+          ],
+        ),
       ),
     ));
   }
