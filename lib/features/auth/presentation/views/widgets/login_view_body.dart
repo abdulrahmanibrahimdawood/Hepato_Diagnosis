@@ -76,6 +76,14 @@ class LoginViewBody extends StatelessWidget {
             ),
             SocialLoginButton(
               onPressed: () {},
+              icon: Assets.assetsImagesAppleIcon,
+              title: 'Register with Apple',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            SocialLoginButton(
+              onPressed: () {},
               icon: Assets.assetsImagesFacebookIcon,
               title: 'Register with Facebook',
             ),
