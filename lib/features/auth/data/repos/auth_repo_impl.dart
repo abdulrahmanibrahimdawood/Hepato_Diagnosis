@@ -29,11 +29,25 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failuer, UserEntity>> signInWithEmailAndPassword(
+  Future<Either<Failuer, UserEntity>> signinWithEmailAndPassword(
       String email, String password) async {
     try {
       var user = await firebaseAuthService.signInWithEmailAndPassword(
           email: email, password: password);
+      return right(UserModel.fromFirebaseUser(user));
+    } on CustomExceptions catch (e) {
+      return left(ServerFailuer(message: e.message));
+    } catch (e) {
+      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
+      return left(
+          ServerFailuer(message: 'An error occured. Please try again later.'));
+    }
+  }
+
+  @override
+  Future<Either<Failuer, UserEntity>> signinWithGoogle() async {
+    try {
+      var user = await firebaseAuthService.signInWithGoogle();
       return right(UserModel.fromFirebaseUser(user));
     } on CustomExceptions catch (e) {
       return left(ServerFailuer(message: e.message));
