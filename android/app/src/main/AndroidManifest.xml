@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+        <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Hepato diagnosis"
         android:name="${applicationName}"
@@ -50,7 +51,6 @@
    	    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
     
     
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     </application>
