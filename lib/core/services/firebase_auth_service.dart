@@ -27,10 +27,13 @@ class FirebaseAuthService {
       } else if (e.code == 'email-already-in-use') {
         throw CustomExceptions(
             message: 'The account already exists for that email.');
-      } else if (e.code == 'network-request-failed') {
+      } else if (e.code == 'email-already-in-use') {
+        throw CustomExceptions(
+            message: 'The account already exists for that email.');
+      } else if (e.code == 'invalid-credentials') {
         throw CustomExceptions(
             message:
-                'No internet connection. Please check your internet connection and try again.');
+                'Error : Please check your email and password and try again.');
       } else {
         throw CustomExceptions(message: 'An error occured. Please try again.');
       }
