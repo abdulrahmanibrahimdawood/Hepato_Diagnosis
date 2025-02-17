@@ -18,13 +18,18 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var user = await firebaseAuthService.createUserWithEmailAndPassword(
           email: email, password: password);
-      return right(UserModel.fromFirebaseUser(user!));
+      return right(
+        UserModel.fromFirebaseUser(user!),
+      );
     } on CustomExceptions catch (e) {
-      return left(ServerFailuer(message: e.message));
+      return left(
+        ServerFailuer(message: e.message),
+      );
     } catch (e) {
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
       return left(
-          ServerFailuer(message: 'An error occured. Please try again later.'));
+        ServerFailuer(message: 'An error occured. Please try again later.'),
+      );
     }
   }
 
@@ -34,13 +39,18 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var user = await firebaseAuthService.signInWithEmailAndPassword(
           email: email, password: password);
-      return right(UserModel.fromFirebaseUser(user));
+      return right(
+        UserModel.fromFirebaseUser(user),
+      );
     } on CustomExceptions catch (e) {
-      return left(ServerFailuer(message: e.message));
+      return left(
+        ServerFailuer(message: e.message),
+      );
     } catch (e) {
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
       return left(
-          ServerFailuer(message: 'An error occured. Please try again later.'));
+        ServerFailuer(message: 'An error occured. Please try again later.'),
+      );
     }
   }
 
@@ -48,13 +58,33 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failuer, UserEntity>> signinWithGoogle() async {
     try {
       var user = await firebaseAuthService.signInWithGoogle();
-      return right(UserModel.fromFirebaseUser(user));
+      return right(
+        UserModel.fromFirebaseUser(user),
+      );
     } on CustomExceptions catch (e) {
-      return left(ServerFailuer(message: e.message));
+      return left(
+        ServerFailuer(message: e.message),
+      );
     } catch (e) {
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
       return left(
-          ServerFailuer(message: 'An error occured. Please try again later.'));
+        ServerFailuer(message: 'An error occured. Please try again later.'),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failuer, UserEntity>> signinWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(
+        UserModel.fromFirebaseUser(user),
+      );
+    } catch (e) {
+      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
+      return left(
+        ServerFailuer(message: 'An error occured. Please try again later.'),
+      );
     }
   }
 }
