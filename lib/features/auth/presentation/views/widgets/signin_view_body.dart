@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/utils/app_images.dart';
@@ -104,16 +106,20 @@ class _SigninViewBodyState extends State<SigninViewBody> {
               const SizedBox(
                 height: 16,
               ),
-              SocialLoginButton(
-                onPressed: () {
-                  context.read<SigninCubit>().signInWithApple();
-                },
-                icon: Assets.assetsImagesAppleIcon,
-                title: 'Register with Apple',
-              ),
-              const SizedBox(
-                height: 16,
-              ),
+              Platform.isIOS
+                  ? Column(children: [
+                      SocialLoginButton(
+                        onPressed: () {
+                          context.read<SigninCubit>().signInWithApple();
+                        },
+                        icon: Assets.assetsImagesAppleIcon,
+                        title: 'Register with Apple',
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                    ])
+                  : const SizedBox(),
               SocialLoginButton(
                 onPressed: () {
                   context.read<SigninCubit>().signInWithFacebook();
