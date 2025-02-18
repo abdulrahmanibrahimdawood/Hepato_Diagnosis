@@ -12,15 +12,12 @@ class SigninView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: BlocProvider(
-        create: (context) => SigninCubit(getIt.get<AuthRepo>()),
-        child: Scaffold(
-          // resizeToAvoidBottomInset: true,
-          appBar: buildAppBar(context, title: 'Login'),
-          body: const SigninViewBodyBlocConsumer(),
-        ),
+    return BlocProvider(
+      create: (context) => SigninCubit(getIt.get<AuthRepo>()),
+      child: Scaffold(
+        // resizeToAvoidBottomInset: true,
+        appBar: buildAppBar(context, title: 'Login'),
+        body: const SigninViewBodyBlocConsumer(),
       ),
     );
   }

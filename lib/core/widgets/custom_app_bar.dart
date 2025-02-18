@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar buildAppBar(context, {required String title}) {
+AppBar buildAppBar(context, {required String title, Icon? icon}) {
   return AppBar(
     centerTitle: true,
     title: Text(
@@ -14,10 +14,7 @@ AppBar buildAppBar(context, {required String title}) {
       onTap: () {
         Navigator.pop(context);
       },
-      child: const Icon(
-        Icons.arrow_back_ios_new,
-        color: Colors.black,
-      ),
+      child: icon,
     ),
   );
 }

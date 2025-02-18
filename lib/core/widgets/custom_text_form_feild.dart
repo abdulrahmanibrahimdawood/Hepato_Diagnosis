@@ -29,11 +29,11 @@ class CustomTextFormFeild extends StatelessWidget {
         return null;
       },
       textAlignVertical: TextAlignVertical.center,
-      textAlign: TextAlign.end,
+      textAlign: TextAlign.start,
       keyboardType: textInputType,
       decoration: InputDecoration(
-        suffixIcon: icon,
-        prefixIcon: suffixIcon,
+        suffixIcon: suffixIcon,
+        prefixIcon: icon,
         hintText: hintText,
         hintStyle: const TextStyle(fontSize: 16, color: Colors.blueGrey),
         filled: true,

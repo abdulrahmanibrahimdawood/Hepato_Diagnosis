@@ -62,7 +62,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  '! Forget Password ',
+                  'Forget Password !',
                   style: TextStyle(
                       color: AppColor.kPrimaryColor.withValues(alpha: 1),
                       fontSize: 15,

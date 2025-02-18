@@ -16,6 +16,15 @@ class _TermsAndCondationsWidgetsState extends State<TermsAndCondationsWidgets> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        CustomCheckBox(
+          onChecked: (value) {
+            isTermedAccepts = value;
+            widget.onChanged(value);
+            setState(() {});
+          },
+          isChecked: isTermedAccepts,
+        ),
+        const SizedBox(width: 16),
         const Expanded(
           child: Text.rich(
             TextSpan(
@@ -42,15 +51,6 @@ class _TermsAndCondationsWidgetsState extends State<TermsAndCondationsWidgets> {
             ),
             textAlign: TextAlign.left,
           ),
-        ),
-        const SizedBox(width: 16),
-        CustomCheckBox(
-          onChecked: (value) {
-            isTermedAccepts = value;
-            widget.onChanged(value);
-            setState(() {});
-          },
-          isChecked: isTermedAccepts,
         ),
       ],
     );

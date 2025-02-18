@@ -12,16 +12,20 @@ class SignupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: BlocProvider(
-        create: (context) => SignupCubit(
-          getIt<AuthRepo>(),
+    return BlocProvider(
+      create: (context) => SignupCubit(
+        getIt<AuthRepo>(),
+      ),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          title: 'Register',
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
         ),
-        child: Scaffold(
-          appBar: buildAppBar(context, title: 'Register'),
-          body: const SignupViewBodyBlocConsumer(),
-        ),
+        body: const SignupViewBodyBlocConsumer(),
       ),
     );
   }
