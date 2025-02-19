@@ -13,7 +13,9 @@ class SigninView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SigninCubit(getIt.get<AuthRepo>()),
+      create: (context) => SigninCubit(
+        getIt<AuthRepo>(),
+      ),
       child: Scaffold(
         // resizeToAvoidBottomInset: true,
         appBar: buildAppBar(context, title: 'Login'),
