@@ -86,10 +86,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
                   if (istermedAccepts) {
-                    context
-                        .read()<SignupCubit>()
-                        .createUserWithEmailAndPassword(
-                            email, password, userName);
+                    context.read<SignupCubit>().createUserWithEmailAndPassword(
+                        email, password, userName);
                   } else {
                     buildErrorBar(
                         context, ' You must accept the terms and conditions');

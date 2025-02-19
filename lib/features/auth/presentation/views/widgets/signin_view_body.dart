@@ -76,9 +76,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      context
-                          .read()<SigninCubit>()
-                          .signin(email: email, password: password);
+                      context.read<SigninCubit>().signIn(email, password);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
