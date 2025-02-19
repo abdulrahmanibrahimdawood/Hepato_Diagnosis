@@ -1,14 +1,14 @@
 import 'package:e_commerce/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+  static const routeName = 'home';
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(

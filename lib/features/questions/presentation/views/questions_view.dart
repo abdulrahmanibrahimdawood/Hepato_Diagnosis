@@ -2,8 +2,8 @@ import 'package:e_commerce/core/widgets/app_bar_inside.dart';
 import 'package:e_commerce/features/questions/presentation/views/widgets/question_list_view.dart';
 import 'package:flutter/material.dart';
 
-class QuesthionsPage extends StatelessWidget {
-  const QuesthionsPage({super.key});
+class QuesthionsView extends StatelessWidget {
+  const QuesthionsView({super.key});
   static const routeName = 'questions';
 
   @override

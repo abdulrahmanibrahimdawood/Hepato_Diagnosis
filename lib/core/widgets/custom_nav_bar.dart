@@ -18,9 +18,9 @@ class _MainPageState extends State<CustomNavBar> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = [
-    HomePage(),
+    HomeView(),
     AnalysisView(),
-    QuesthionsPage(),
+    QuesthionsView(),
     DoctorsView(),
   ];
 

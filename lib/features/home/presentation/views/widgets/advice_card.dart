@@ -26,7 +26,7 @@ class AdviceCard extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Image.asset(
-                  'assets/images/dvice_photo',
+                  'assets/images/dvice_photo.png',
                   height: 150,
                 ),
                 const Text(
