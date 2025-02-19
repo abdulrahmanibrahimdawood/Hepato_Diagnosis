@@ -22,7 +22,8 @@ class SigninViewBody extends StatefulWidget {
 
 class _SigninViewBodyState extends State<SigninViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  late String email, password;
+  String email = '';
+  String password = '';
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {

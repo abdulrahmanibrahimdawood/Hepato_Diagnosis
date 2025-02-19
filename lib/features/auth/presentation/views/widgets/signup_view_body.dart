@@ -21,8 +21,11 @@ class _SignupViewBodyState extends State<SignupViewBody> {
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  late String email, userName, password;
-  late bool istermedAccepts = false;
+  String email = '';
+  String userName = '';
+  String password = '';
+  bool istermedAccepts = false;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
