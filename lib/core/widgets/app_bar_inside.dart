@@ -1,7 +1,6 @@
 import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/widgets/custom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAppBarInside extends StatelessWidget {
   const CustomAppBarInside({
@@ -38,8 +37,8 @@ class CustomAppBarInside extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, CustomNavBar.routeName);
             },
-            icon: const FaIcon(
-              FontAwesomeIcons.arrowLeft,
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
               color: AppColor.kPrimaryColor,
             ),
           ),

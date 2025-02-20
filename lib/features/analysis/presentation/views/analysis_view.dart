@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/widgets/app_bar_inside.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/features/analysis/presentation/views/widgets/text_form_feild_analysis.dart';
+import 'package:e_commerce/features/analysis/presentation/views/widgets/text_form_feild_to_analysis.dart';
 import 'package:e_commerce/features/analysis/presentation/views/widgets/custom_text_feild_diagnosis.dart';
 import 'package:flutter/material.dart';
 
