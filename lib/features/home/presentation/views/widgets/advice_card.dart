@@ -2,6 +2,7 @@ import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/features/checkout/data/models/advice_model.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AdviceCard extends StatelessWidget {
   AdviceCard({
     required this.advice,
@@ -29,8 +30,9 @@ class AdviceCard extends StatelessWidget {
                       fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Image.asset(
-                  advice.image,
-                  height: 150,
+                  'assets/images/dvice_photo.png',
+                  height: 200,
+                  width: 100,
                 ),
                 Text(
                   advice.description,
