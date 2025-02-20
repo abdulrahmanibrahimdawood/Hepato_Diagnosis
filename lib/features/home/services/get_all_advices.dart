@@ -10,7 +10,6 @@ class AllAdviceServices {
     );
 
     List<dynamic> data = response['data'];
-
     List<AdviceModel> adviceList =
         data.map((json) => AdviceModel.fromJson(json)).toList();
 
