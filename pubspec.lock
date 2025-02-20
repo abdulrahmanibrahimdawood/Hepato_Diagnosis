@@ -458,6 +458,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.1.2"
+  http_requests:
+    dependency: "direct main"
+    description:
+      name: http_requests
+      sha256: a7b4e5825b22a7598d70db9d203f1ca1b8750379580ec54a8cff68375d132574
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.2.0"
   image:
     dependency: transitive
     description:

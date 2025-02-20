@@ -1,11 +1,13 @@
 import 'package:e_commerce/core/utils/app_color.dart';
+import 'package:e_commerce/features/checkout/data/models/advice_model.dart';
 import 'package:flutter/material.dart';
 
 class AdviceCard extends StatelessWidget {
-  const AdviceCard({
+  AdviceCard({
+    required this.advice,
     super.key,
   });
-
+  AdviceModel advice;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,17 +23,18 @@ class AdviceCard extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: Column(
               children: [
-                const Text(
-                  'Monitor Fluid Intake',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                Text(
+                  advice.title,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Image.asset(
-                  'assets/images/dvice_photo.png',
+                  advice.image,
                   height: 150,
                 ),
-                const Text(
-                  " It’s crucial for kidney patients to keep an eye on their fluid intake. Drinking too much or too little can impact kidney function. A doctor can provide personalized guidance on the right amount based on your condition.",
-                  style: TextStyle(fontSize: 14),
+                Text(
+                  advice.description,
+                  style: const TextStyle(fontSize: 14),
                 ),
               ],
             ),
