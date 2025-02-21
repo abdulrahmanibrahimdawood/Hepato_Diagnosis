@@ -22,8 +22,8 @@ class AdviceModel {
 
     return AdviceModel(
       id: jsonData['advice_id'].toString(),
-      title: jsonData['title'],
-      description: jsonData['description'],
+      title: jsonData['title'] ?? "No title",
+      description: jsonData['description'] ?? "No description",
       image: "$baseUrl$imagePath",
     );
   }
