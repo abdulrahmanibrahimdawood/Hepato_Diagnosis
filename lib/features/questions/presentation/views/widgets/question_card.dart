@@ -1,17 +1,19 @@
+import 'package:e_commerce/features/checkout/data/models/questions_model.dart';
 import 'package:flutter/material.dart';
 
 class QuestionCard extends StatelessWidget {
-  const QuestionCard({
+  QuestionCard({
+    required this.question,
     super.key,
   });
-
+  QuestionModel question;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 220,
+        height: 300,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -28,24 +30,24 @@ class QuestionCard extends StatelessWidget {
             ),
           ],
         ),
-        child: const Column(
+        child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Text(
-                'What treatment options are',
-                style: TextStyle(
+                question.question,
+                style: const TextStyle(
                     color: Color(0xFF4781C0),
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              'Options incclude dialysis or kidney',
-              style: TextStyle(
+              question.answer,
+              style: const TextStyle(
                 fontSize: 20,
               ),
             ),
