@@ -34,25 +34,35 @@ class _MapViewState extends State<MapView> {
       var userLocation = await location.getLocation();
       setState(() {
         currentLocation = userLocation;
-        markers.add(
-          Marker(
-            width: 80.0,
-            height: 80.0,
-            point: LatLng(userLocation.latitude!, userLocation.longitude!),
-            child:
-                const Icon(Icons.my_location, color: Colors.blue, size: 40.0),
-          ),
-        );
+        _updateCurrentLocationMarker();
       });
-    } on Exception {
+    } catch (e) {
+      print("Error getting location: $e");
       currentLocation = null;
     }
 
     location.onLocationChanged.listen((LocationData newLocation) {
       setState(() {
         currentLocation = newLocation;
+        _updateCurrentLocationMarker();
       });
     });
+  }
+
+  void _updateCurrentLocationMarker() {
+    if (currentLocation == null) return;
+
+    markers.removeWhere((marker) =>
+        marker.child is Icon &&
+        (marker.child as Icon).icon == Icons.my_location);
+    markers.add(
+      Marker(
+        width: 80.0,
+        height: 80.0,
+        point: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
+        child: const Icon(Icons.my_location, color: Colors.blue, size: 40.0),
+      ),
+    );
   }
 
   Future<void> _getRoute(LatLng destination) async {
@@ -60,35 +70,35 @@ class _MapViewState extends State<MapView> {
 
     final start =
         LatLng(currentLocation!.latitude!, currentLocation!.longitude!);
-    final response = await http.get(
-      Uri.parse(
-          'https://api.openrouteservice.org/v2/directions/driving-car?api_key=$orsApiKey&start=${start.longitude},${start.latitude}&end=${destination.longitude},${destination.latitude}'),
-    );
+    final String url =
+        'https://api.openrouteservice.org/v2/directions/driving-car?api_key=$orsApiKey&start=${start.longitude},${start.latitude}&end=${destination.longitude},${destination.latitude}';
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      final List<dynamic> coords =
-          data['features'][0]['geometry']['coordinates'];
-      setState(() {
-        routePoints =
-            coords.map((coord) => LatLng(coord[1], coord[0])).toList();
-        markers.add(
-          Marker(
-            width: 80.0,
-            height: 80.0,
-            point: destination,
-            child: const Icon(Icons.location_on, color: Colors.red, size: 40.0),
-          ),
-        );
-      });
-    } else {
-      // Handle errors
-      print('Failed to fetch route');
+    try {
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final List<dynamic> coords =
+            data['features'][0]['geometry']['coordinates'];
+
+        setState(() {
+          routePoints =
+              coords.map((coord) => LatLng(coord[1], coord[0])).toList();
+        });
+      } else {
+        print(
+            'Error: Failed to fetch route. Status code: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Error fetching route: $e');
     }
   }
 
   void _addDestinationMarker(LatLng point) {
     setState(() {
+      markers.removeWhere((marker) =>
+          marker.child is Icon &&
+          (marker.child as Icon).icon == Icons.location_on);
       markers.add(
         Marker(
           width: 80.0,
