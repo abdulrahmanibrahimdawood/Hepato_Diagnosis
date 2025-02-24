@@ -38,7 +38,6 @@ class HebatoDiagnosis extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoutes,
-
       initialRoute: CustomNavBar.routeName,
 
       // initialRoute: SplashView.routeName,
