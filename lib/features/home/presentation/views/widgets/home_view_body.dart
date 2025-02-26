@@ -1,5 +1,4 @@
 import 'package:e_commerce/core/utils/app_color.dart';
-import 'package:e_commerce/features/analysis/presentation/views/analysis_view.dart';
 import 'package:e_commerce/features/doctors/presentation/views/map_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/advices_list_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/icon_button.dart';
@@ -62,10 +61,10 @@ class HomeViewBody extends StatelessWidget {
             ),
             const AdvicesListView(),
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
             Container(
-              height: 50,
+              height: 57,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
@@ -89,8 +88,8 @@ class HomeViewBody extends StatelessWidget {
                     'Go to know the result now',
                     style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

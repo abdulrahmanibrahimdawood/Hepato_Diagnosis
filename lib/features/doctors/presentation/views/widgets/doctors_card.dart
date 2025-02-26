@@ -21,7 +21,7 @@ class DoctorCard extends StatelessWidget {
             padding: EdgeInsets.only(left: 12),
             child: CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage('assets/three.png'),
+              backgroundImage: AssetImage('assets/images/app_icon.png'),
             ),
           ),
           const SizedBox(width: 15),
