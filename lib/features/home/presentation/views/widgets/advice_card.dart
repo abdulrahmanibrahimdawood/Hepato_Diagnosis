@@ -25,7 +25,7 @@ class AdviceCard extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 8,
+                height: 18,
               ),
               Text(
                 advice.title,
@@ -50,7 +50,7 @@ class AdviceCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 12,
+                height: 18,
               ),
               Text(
                 advice.description,

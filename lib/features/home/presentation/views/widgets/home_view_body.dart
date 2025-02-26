@@ -54,9 +54,12 @@ class HomeViewBody extends StatelessWidget {
             ),
             const Align(
               alignment: Alignment.bottomLeft,
-              child: Text(
-                'Advice',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: EdgeInsets.only(left: 9, top: 10),
+                child: Text(
+                  'Advice',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             const AdvicesListView(),

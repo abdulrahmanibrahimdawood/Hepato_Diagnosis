@@ -1,7 +1,8 @@
-import 'package:e_commerce/features/checkout/data/models/advice_model.dart';
+import 'package:e_commerce/features/home/cubit/cubit/home_cubit.dart';
+import 'package:e_commerce/features/home/cubit/cubit/home_state.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/advice_card.dart';
-import 'package:e_commerce/features/home/services/get_all_advices.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AdvicesListView extends StatelessWidget {
   const AdvicesListView({super.key});
@@ -9,35 +10,33 @@ class AdvicesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 320, // زيادة الارتفاع قليلاً
-      child: FutureBuilder<List<AdviceModel>>(
-        future: AllAdviceServices().getAllAdvices(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+      height: 330,
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          if (state is HomeLoading) {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (snapshot.hasError) {
-            return const Center(
-              child: Text("Error loading data."),
+          } else if (state is HomeFailure) {
+            return Center(
+              child: Text(state.errMessage),
             );
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          } else if (state is HomeSuccess) {
+            return ListView.builder(
+              itemCount: state.advices.length,
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return AdviceCard(
+                  advice: state.advices[index],
+                );
+              },
+            );
+          } else {
             return const Center(
               child: Text("No advice available."),
             );
           }
-
-          List<AdviceModel> advices = snapshot.data!;
-          return ListView.builder(
-            itemCount: advices.length,
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return AdviceCard(
-                advice: advices[index],
-              );
-            },
-          );
         },
       ),
     );
