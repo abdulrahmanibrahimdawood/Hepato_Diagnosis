@@ -19,7 +19,33 @@ class AdvicesListView extends StatelessWidget {
             );
           } else if (state is HomeFailure) {
             return Center(
-              child: Text(state.errMessage),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.error_outline,
+                    color: Colors.red,
+                    size: 60,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    state.errMessage,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {
+                      context.read<HomeCubit>().fetchAdvices();
+                    },
+                    child: const Text('Try Again'),
+                  ),
+                ],
+              ),
             );
           } else if (state is HomeSuccess) {
             return ListView.builder(

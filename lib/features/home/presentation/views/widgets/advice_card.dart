@@ -3,11 +3,11 @@ import 'package:e_commerce/features/checkout/data/models/advice_model.dart';
 import 'package:flutter/material.dart';
 
 class AdviceCard extends StatelessWidget {
-  AdviceCard({
+  const AdviceCard({
     required this.advice,
     super.key,
   });
-  AdviceModel advice;
+  final AdviceModel advice;
 
   @override
   Widget build(BuildContext context) {

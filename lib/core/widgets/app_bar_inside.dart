@@ -19,7 +19,7 @@ class CustomAppBarInside extends StatelessWidget {
           child: Text(
             text1,
             style: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
+                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
           ),
         ),
       ),
@@ -37,9 +37,12 @@ class CustomAppBarInside extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, CustomNavBar.routeName);
             },
-            icon: const Icon(
-              Icons.arrow_back_ios_new,
-              color: AppColor.kPrimaryColor,
+            icon: const Padding(
+              padding: EdgeInsets.only(left: 8),
+              child: Icon(
+                Icons.arrow_back_ios_new,
+                color: AppColor.kPrimaryColor,
+              ),
             ),
           ),
         ),

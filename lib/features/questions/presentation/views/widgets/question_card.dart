@@ -1,54 +1,68 @@
+import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/features/checkout/data/models/questions_model.dart';
 import 'package:flutter/material.dart';
 
 class QuestionCard extends StatelessWidget {
-  QuestionCard({
+  const QuestionCard({
     required this.question,
     super.key,
   });
-  QuestionModel question;
+  final QuestionModel question;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.all(12),
       child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 300,
+        width: 353,
+        height: 160,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border.all(
-            color: const Color.fromARGB(255, 189, 185, 185),
-            width: 1.0,
-          ),
-          borderRadius: BorderRadius.circular(11),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: const [
             BoxShadow(
-              blurRadius: 10,
-              color: Color.fromARGB(255, 200, 199, 199),
+              color: Color(0x26000000),
+              blurRadius: 6,
+              offset: Offset(0, 2),
+              spreadRadius: 2,
+            ),
+            BoxShadow(
+              color: Color(0x4C000000),
+              blurRadius: 2,
+              offset: Offset(0, 1),
               spreadRadius: 0,
-              offset: Offset(-5, -5),
             ),
           ],
         ),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.only(top: 12),
               child: Text(
                 question.question,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                    color: Color(0xFF4781C0),
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                  color: AppColor.kPrimaryColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              question.answer,
-              style: const TextStyle(
-                fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Text(
+                question.answer,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ],

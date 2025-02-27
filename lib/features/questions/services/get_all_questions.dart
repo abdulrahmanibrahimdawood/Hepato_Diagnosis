@@ -5,7 +5,7 @@ class AllQuestionsServices {
   Future<List<QuestionModel>> getAllQuestions() async {
     Map<String, dynamic> response = await Api().get(
       url:
-          'https://0fd2-156-197-231-205.ngrok-free.app/project/questions/process.php',
+          'https://7b36-156-197-132-137.ngrok-free.app/project/questions/process.php',
       token: null,
     );
 
