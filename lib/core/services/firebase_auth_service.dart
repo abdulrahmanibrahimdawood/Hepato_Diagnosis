@@ -15,34 +15,41 @@ class FirebaseAuthService {
     required String password,
   }) async {
     try {
+      print('📩 Received Email: $email');
+      print('🔑 Received Password: $password');
+
+      if (email.trim().isEmpty || password.trim().isEmpty) {
+        throw CustomExceptions(message: 'Email and password cannot be empty.');
+      }
+
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return credential.user!;
+
+      return credential.user;
     } on FirebaseAuthException catch (e) {
-      log('Exception in FirebaseAuthService.createUserWithEmailAndPassword ${e.toString()} and code ${e.code}');
+      log('🔥 FirebaseAuthException: ${e.toString()}');
+      print('❌ Error Code: ${e.code}');
+
       if (e.code == 'weak-password') {
         throw CustomExceptions(message: 'The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         throw CustomExceptions(
             message: 'The account already exists for that email.');
-      } else if (e.code == 'email-already-in-use') {
-        throw CustomExceptions(
-            message: 'The account already exists for that email.');
-      } else if (e.code == 'invalid-credentials') {
-        throw CustomExceptions(
-            message:
-                'Error : Please check your email and password and try again.');
+      } else if (e.code == 'invalid-email') {
+        throw CustomExceptions(message: 'Invalid email format.');
       } else {
-        throw CustomExceptions(message: 'An error occured. Please try again.');
+        throw CustomExceptions(
+            message: 'Unknown error: ${e.message}. Please try again.');
       }
     } catch (e) {
-      log('Exception in FirebaseAuthService.createUserWithEmailAndPassword ${e.toString()}');
+      log('🚨 General Exception: ${e.toString()}');
+      print('🚨 Unexpected Error: ${e.toString()}');
 
       throw CustomExceptions(
-          message: 'An error occured. Please try again later.');
+          message: 'An unexpected error occurred: ${e.toString()}');
     }
   }
 
