@@ -22,21 +22,20 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       log("Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()} and code is ${e.code}");
       if (e.code == 'weak-password') {
-        throw CustomException(message: 'الرقم السري ضعيف جداً.');
+        throw CustomException(message: 'The password is too weak.');
       } else if (e.code == 'email-already-in-use') {
         throw CustomException(
-            message: 'لقد قمت بالتسجيل مسبقاً. الرجاء تسجيل الدخول.');
+            message: 'You have already registered. Please log in.');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تاكد من اتصالك بالانترنت.');
-      } else {
         throw CustomException(
-            message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+            message: 'Please check your internet connection.');
+      } else {
+        throw CustomException(message: 'An error occurred. Please try again.');
       }
     } catch (e) {
       log("Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()}");
 
-      throw CustomException(
-          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+      throw CustomException(message: 'An error occurred. Please try again.');
     }
   }
 
@@ -49,25 +48,21 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       log("Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} and code is ${e.code}");
       if (e.code == 'user-not-found') {
-        throw CustomException(
-            message: 'الرقم السري او البريد الالكتروني غير صحيح.');
+        throw CustomException(message: 'Incorrect email or password.');
       } else if (e.code == 'wrong-password') {
-        throw CustomException(
-            message: 'الرقم السري او البريد الالكتروني غير صحيح.');
+        throw CustomException(message: 'Incorrect email or password.');
       } else if (e.code == 'invalid-credential') {
-        throw CustomException(
-            message: 'الرقم السري او البريد الالكتروني غير صحيح.');
+        throw CustomException(message: 'Incorrect email or password.');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تاكد من اتصالك بالانترنت.');
-      } else {
         throw CustomException(
-            message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+            message: 'Please check your internet connection.');
+      } else {
+        throw CustomException(message: 'An error occurred. Please try again.');
       }
     } catch (e) {
       log("Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()}");
 
-      throw CustomException(
-          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+      throw CustomException(message: 'An error occurred. Please try again.');
     }
   }
 
