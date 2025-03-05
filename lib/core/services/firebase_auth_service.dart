@@ -50,10 +50,10 @@ class FirebaseAuthService {
       log("Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} and code is ${e.code}");
       if (e.code == 'user-not-found') {
         throw CustomException(
-            message: 'الرقم السري او البريد الالكتروني غير صحيح. ');
+            message: 'الرقم السري او البريد الالكتروني غير صحيح.');
       } else if (e.code == 'wrong-password') {
         throw CustomException(
-            message: 'الرقم السري او البريد الالكتروني غير صحيح. ');
+            message: 'الرقم السري او البريد الالكتروني غير صحيح.');
       } else if (e.code == 'invalid-credential') {
         throw CustomException(
             message: 'الرقم السري او البريد الالكتروني غير صحيح.');
