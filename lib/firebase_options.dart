@@ -63,6 +63,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '831468773599',
     projectId: 'hepato-diagnosis-d783c',
     storageBucket: 'hepato-diagnosis-d783c.firebasestorage.app',
+    androidClientId: '831468773599-74k18tr0ou12ricrleshtd3jr53p5cgv.apps.googleusercontent.com',
+    iosClientId: '831468773599-q5uog2uqlptol3p3bo4ansojhl029tbs.apps.googleusercontent.com',
     iosBundleId: 'com.example.eCommerce',
   );
+
 }

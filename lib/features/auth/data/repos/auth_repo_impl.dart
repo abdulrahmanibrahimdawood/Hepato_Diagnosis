@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/errors/exceptions.dart';
 import 'package:e_commerce/core/errors/failuer.dart';
@@ -18,18 +17,14 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var user = await firebaseAuthService.createUserWithEmailAndPassword(
           email: email, password: password);
-      return right(
-        UserModel.fromFirebaseUser(user),
-      );
+
+      return right(UserModel.fromFirebaseUser(user));
     } on CustomException catch (e) {
-      return left(
-        ServerFailure(e.message),
-      );
+      log('CustomException: ${e.message}');
+      return left(ServerFailure(e.message));
     } catch (e) {
-      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
-      return left(
-        ServerFailure('An error occured. Please try again later.'),
-      );
+      log('Exception in createUserWithEmailAndPassword: ${e.toString()}');
+      return left(ServerFailure('An unexpected error occurred.'));
     }
   }
 
@@ -39,18 +34,14 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var user = await firebaseAuthService.signInWithEmailAndPassword(
           email: email, password: password);
-      return right(
-        UserModel.fromFirebaseUser(user),
-      );
+
+      return right(UserModel.fromFirebaseUser(user));
     } on CustomException catch (e) {
-      return left(
-        ServerFailure(e.message),
-      );
+      log('CustomException: ${e.message}');
+      return left(ServerFailure(e.message));
     } catch (e) {
-      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword ${e.toString()}');
-      return left(
-        ServerFailure('An error occured. Please try again later.'),
-      );
+      log('Exception in signinWithEmailAndPassword: ${e.toString()}');
+      return left(ServerFailure('An unexpected error occurred.'));
     }
   }
 
