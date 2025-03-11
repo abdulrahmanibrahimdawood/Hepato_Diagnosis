@@ -2,6 +2,7 @@ import 'package:e_commerce/core/helper_functions/on_generate_routes.dart';
 import 'package:e_commerce/core/services/custom_bloc_observer.dart';
 import 'package:e_commerce/core/services/get_it_servece.dart';
 import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
+import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:e_commerce/features/splash/presentation/views/splash_view.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:e_commerce/generated/l10n.dart';
@@ -40,7 +41,7 @@ class HebatoDiagnosis extends StatelessWidget {
       onGenerateRoute: onGenerateRoutes,
       // initialRoute: CustomNavBar.routeName,
 
-      initialRoute: SplashView.routeName,
+      initialRoute: HomeView.routeName,
     );
   }
 }

@@ -26,20 +26,20 @@ class CustomAppBarInside extends StatelessWidget {
       Positioned(
         top: 7,
         left: 7,
-        child: Container(
-          height: 45,
-          width: 45,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, CustomNavBar.routeName);
-            },
-            icon: const Padding(
-              padding: EdgeInsets.only(left: 8),
-              child: Icon(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Container(
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, CustomNavBar.routeName);
+              },
+              icon: const Icon(
                 Icons.arrow_back_ios_new,
                 color: AppColor.kPrimaryColor,
               ),

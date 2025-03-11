@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/utils/app_color.dart';
+import 'package:e_commerce/features/doctors/presentation/views/map_view.dart';
 import 'package:flutter/material.dart';
 
 class DoctorCard extends StatelessWidget {
@@ -119,11 +120,24 @@ class DoctorCard extends StatelessWidget {
                           onTap: () {
                             // print('Location View Clicked');
                           },
-                          child: const Text(
-                            'View',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: AppColor.kPrimaryColor,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MapScreen(
+                                    requiredLat: 30.0444, // خط العرض المطلوب
+                                    requiredLng: 31.2357, // خط الطول المطلوب
+                                  ),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              'View',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: AppColor.kPrimaryColor,
+                              ),
                             ),
                           ),
                         ),

@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/utils/app_color.dart';
-import 'package:e_commerce/features/doctors/presentation/views/map_view.dart';
+import 'package:e_commerce/features/analysis/presentation/views/analysis_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/advices_list_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
@@ -76,22 +76,13 @@ class HomeViewBody extends StatelessWidget {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    // Navigator.pushNamed(context, AnalysisView.routeName);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MapScreen(
-                          requiredLat: 30.0444, // خط العرض المطلوب
-                          requiredLng: 31.2357, // خط الطول المطلوب
-                        ),
-                      ),
-                    );
+                    Navigator.pushNamed(context, AnalysisView.routeName);
                   },
                   child: const Text(
                     'Go to know the result now',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 24,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
