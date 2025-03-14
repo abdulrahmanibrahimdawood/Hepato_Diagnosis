@@ -1,16 +1,18 @@
 import 'package:e_commerce/core/utils/app_color.dart';
+import 'package:e_commerce/features/checkout/data/models/doctors_model.dart';
 import 'package:e_commerce/features/doctors/presentation/views/map_view.dart';
 import 'package:flutter/material.dart';
 
 class DoctorCard extends StatelessWidget {
   const DoctorCard({
     super.key,
+    required this.doctors,
   });
-
+  final DoctorsModel doctors;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210,
+      height: 190,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColor.kPrimaryColor.withValues(alpha: .5),
@@ -18,11 +20,41 @@ class DoctorCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 12),
-            child: CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage('assets/images/app_icon.png'),
+          Padding(
+            padding: const EdgeInsets.only(left: 12),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: AppColor.kPrimaryColor,
+                  width: 2,
+                ),
+              ),
+              child: ClipOval(
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Colors.white,
+                  child: doctors.image.isEmpty
+                      ? const Icon(
+                          Icons.image_not_supported,
+                          color: Colors.grey,
+                          size: 60,
+                        )
+                      : Image.network(
+                          doctors.image,
+                          fit: BoxFit.cover,
+                          width: 120,
+                          height: 120,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const Icon(
+                              Icons.image_not_supported,
+                              color: Colors.grey,
+                              size: 60,
+                            );
+                          },
+                        ),
+                ),
+              ),
             ),
           ),
           const SizedBox(width: 15),
@@ -31,77 +63,66 @@ class DoctorCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: 'Name: ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       TextSpan(
-                        text: 'Abdelaziz Mohamed',
-                        style: TextStyle(fontSize: 18),
+                        text: doctors.name,
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                     ],
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: 'Age: ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       TextSpan(
-                        text: '20',
-                        style: TextStyle(fontSize: 18),
+                        text: doctors.age.toString(),
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),
                 ),
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(
-                        text: 'Phone: ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      TextSpan(
-                        text: '+201288656555',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ],
-                  ),
-                ),
-                const Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
+                      const TextSpan(
                         text: 'Governorate: ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       TextSpan(
-                        text: 'Dakahlia',
-                        style: TextStyle(fontSize: 18),
+                        text: doctors.governorate,
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),
                 ),
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: 'Location: ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       TextSpan(
-                        text: 'Mit ghamer',
-                        style: TextStyle(fontSize: 18),
+                        text: doctors.location,
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),
@@ -125,9 +146,11 @@ class DoctorCard extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const MapScreen(
-                                    requiredLat: 30.0444, // خط العرض المطلوب
-                                    requiredLng: 31.2357, // خط الطول المطلوب
+                                  builder: (context) => MapScreen(
+                                    requiredLat:
+                                        doctors.latitude, // خط العرض المطلوب
+                                    requiredLng:
+                                        doctors.longitude, // خط الطول المطلوب
                                   ),
                                 ),
                               );
