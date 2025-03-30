@@ -9,6 +9,7 @@ class CustomTextFormFeild extends StatelessWidget {
       this.icon,
       this.suffixIcon,
       this.onSaved,
+      this.controller,
       this.obscureText = false});
   final String hintText;
   final TextInputType textInputType;
@@ -16,7 +17,7 @@ class CustomTextFormFeild extends StatelessWidget {
   final Widget? icon;
   final void Function(String?)? onSaved;
   final bool obscureText;
-
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -28,6 +29,7 @@ class CustomTextFormFeild extends StatelessWidget {
         }
         return null;
       },
+      controller: controller,
       textAlignVertical: TextAlignVertical.center,
       textAlign: TextAlign.start,
       keyboardType: textInputType,

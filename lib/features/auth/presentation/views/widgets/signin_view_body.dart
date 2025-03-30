@@ -22,8 +22,8 @@ class SigninViewBody extends StatefulWidget {
 
 class _SigninViewBodyState extends State<SigninViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  String email = '';
-  String password = '';
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 height: 24,
               ),
               CustomTextFormFeild(
-                onSaved: (value) {
-                  email = value!;
-                },
+                controller: emailController,
                 icon: const Icon(
                   Icons.email,
                   color: Colors.blueGrey,
@@ -53,9 +51,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 height: 16,
               ),
               PasswordFeild(
-                onSaved: (value) {
-                  password = value!;
-                },
+                controller: passwordController,
               ),
               const SizedBox(
                 height: 16,
@@ -77,7 +73,8 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      context.read<SigninCubit>().signIn(email, password);
+                      context.read<SigninCubit>().signIn(
+                          emailController.text, passwordController.text);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});

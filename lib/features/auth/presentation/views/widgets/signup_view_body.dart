@@ -20,95 +20,95 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
 
-  String email = '';
-  String userName = '';
-  String password = '';
   bool istermedAccepts = false;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: khorizontalPadding),
-      child: Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 24,
-            ),
-            CustomTextFormFeild(
-              onSaved: (value) {
-                userName = value!;
-              },
-              icon: const Icon(
-                Icons.person,
-                color: Colors.blueGrey,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: khorizontalPadding),
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 24,
               ),
-              textInputType: TextInputType.name,
-              hintText: 'Name',
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            CustomTextFormFeild(
-              onSaved: (value) {
-                email = value!;
-              },
-              icon: const Icon(
-                Icons.email,
-                color: Colors.blueGrey,
+              CustomTextFormFeild(
+                controller: userNameController,
+                icon: const Icon(
+                  Icons.person,
+                  color: Colors.blueGrey,
+                ),
+                textInputType: TextInputType.name,
+                hintText: 'Name',
               ),
-              textInputType: TextInputType.emailAddress,
-              hintText: 'Email',
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            PasswordFeild(
-              onSaved: (value) {
-                password = value!;
-              },
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            TermsAndCondationsWidgets(
-              onChanged: (value) {
-                istermedAccepts = value;
-              },
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CustomButton(
-              text: 'Create an account',
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  formKey.currentState!.save();
-                  if (istermedAccepts) {
-                    context.read<SignupCubit>().createUserWithEmailAndPassword(
-                        email, password, userName);
+              const SizedBox(
+                height: 16,
+              ),
+              CustomTextFormFeild(
+                controller: emailController,
+                icon: const Icon(
+                  Icons.email,
+                  color: Colors.blueGrey,
+                ),
+                textInputType: TextInputType.emailAddress,
+                hintText: 'Email',
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              PasswordFeild(
+                controller: passwordController,
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              TermsAndCondationsWidgets(
+                onChanged: (value) {
+                  istermedAccepts = value;
+                },
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              CustomButton(
+                text: 'Create an account',
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    if (istermedAccepts) {
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                            emailController.text,
+                            passwordController.text,
+                            userNameController.text,
+                          );
+                    } else {
+                      buildErrorBar(
+                          context, ' You must accept the terms and conditions');
+                    }
                   } else {
-                    buildErrorBar(
-                        context, ' You must accept the terms and conditions');
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
                   }
-                } else {
-                  setState(() {
-                    autovalidateMode = AutovalidateMode.always;
-                  });
-                }
-              },
-            ),
-            const SizedBox(
-              height: 26,
-            ),
-            const HaveAnAccountWidget()
-          ],
+                },
+              ),
+              const SizedBox(
+                height: 26,
+              ),
+              const HaveAnAccountWidget()
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }
