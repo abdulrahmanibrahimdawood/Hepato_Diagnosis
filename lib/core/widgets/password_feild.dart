@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 class PasswordFeild extends StatefulWidget {
   const PasswordFeild({
     super.key,
-    this.onSaved,
     this.controller,
   });
-  final void Function(String?)? onSaved;
   final TextEditingController? controller;
 
   @override
@@ -21,9 +19,6 @@ class _PasswordFeildState extends State<PasswordFeild> {
     return CustomTextFormFeild(
       obscureText: obscureText,
       controller: widget.controller,
-      onSaved: (value) {
-        widget.onSaved;
-      },
       suffixIcon: GestureDetector(
         onTap: () {
           setState(() {

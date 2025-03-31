@@ -8,21 +8,18 @@ class CustomTextFormFeild extends StatelessWidget {
       required this.textInputType,
       this.icon,
       this.suffixIcon,
-      this.onSaved,
       this.controller,
       this.obscureText = false});
   final String hintText;
   final TextInputType textInputType;
   final Widget? suffixIcon;
   final Widget? icon;
-  final void Function(String?)? onSaved;
   final bool obscureText;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
-      onSaved: onSaved,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter your $hintText';
