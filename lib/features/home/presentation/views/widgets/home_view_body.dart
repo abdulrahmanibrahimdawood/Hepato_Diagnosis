@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/utils/app_color.dart';
-import 'package:e_commerce/features/analysis/presentation/views/analysis_view.dart';
+import 'package:e_commerce/features/doctors/presentation/views/map_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/advices_list_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,15 @@ class HomeViewBody extends StatelessWidget {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, AnalysisView.routeName);
+                    // Navigator.pushNamed(context, AnalysisView.routeName);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MapScreen(
+                                lat: 43.0444,
+                                long: 30.0444,
+                              )),
+                    );
                   },
                   child: const Text(
                     'Go to know the result now',

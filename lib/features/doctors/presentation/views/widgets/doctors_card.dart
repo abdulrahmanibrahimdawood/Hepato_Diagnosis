@@ -147,10 +147,8 @@ class DoctorCard extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => MapScreen(
-                                    requiredLat:
-                                        doctors.latitude, // خط العرض المطلوب
-                                    requiredLng:
-                                        doctors.longitude, // خط الطول المطلوب
+                                    lat: doctors.latitude, // خط العرض المطلوب
+                                    long: doctors.longitude, // خط الطول المطلوب
                                   ),
                                 ),
                               );

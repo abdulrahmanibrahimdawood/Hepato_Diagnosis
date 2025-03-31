@@ -6,13 +6,13 @@ import 'package:location/location.dart';
 import 'package:http/http.dart' as http;
 
 class MapScreen extends StatefulWidget {
-  final double requiredLat;
-  final double requiredLng;
+  final double lat;
+  final double long;
 
   const MapScreen({
     super.key,
-    required this.requiredLat,
-    required this.requiredLng,
+    required this.lat,
+    required this.long,
   });
 
   @override
@@ -80,7 +80,7 @@ class _MapScreenState extends State<MapScreen> {
       Marker(
         width: 80.0,
         height: 80.0,
-        point: LatLng(widget.requiredLat, widget.requiredLng),
+        point: LatLng(widget.lat, widget.long),
         child: const Icon(Icons.location_on, color: Colors.red, size: 40.0),
       ),
     );
@@ -91,7 +91,7 @@ class _MapScreenState extends State<MapScreen> {
 
     final start =
         LatLng(currentLocation!.latitude!, currentLocation!.longitude!);
-    final end = LatLng(widget.requiredLat, widget.requiredLng);
+    final end = LatLng(widget.lat, widget.long);
 
     final response = await http.get(
       Uri.parse(
@@ -122,7 +122,7 @@ class _MapScreenState extends State<MapScreen> {
       body: FlutterMap(
         mapController: mapController,
         options: MapOptions(
-          initialCenter: LatLng(widget.requiredLat, widget.requiredLng),
+          initialCenter: LatLng(widget.lat, widget.long),
           initialZoom: 15.0,
         ),
         children: [
