@@ -15,17 +15,14 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit()..fetchAdvices(),
-      child: const SafeArea(
-        child: Scaffold(
-          body: Padding(
-            padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(height: 700, child: HomeViewBody()),
-                // BodyBottomAppBar(),
-              ],
-            ),
+      child: const Scaffold(
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(height: 700, child: HomeViewBody()),
+              // BodyBottomAppBar(),
+            ],
           ),
         ),
       ),

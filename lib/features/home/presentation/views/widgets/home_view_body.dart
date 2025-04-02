@@ -14,9 +14,10 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const CustomDrawer(),
-      body: SafeArea(
-        child: Builder(
-          builder: (context) => Column(
+      body: Builder(
+        builder: (context) => Padding(
+          padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(

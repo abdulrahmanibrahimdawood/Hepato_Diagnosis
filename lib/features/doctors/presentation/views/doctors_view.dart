@@ -12,9 +12,9 @@ class DoctorsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => DoctorCubit(),
-      child: const SafeArea(
-        child: Scaffold(
-          body: Column(
+      child: const Scaffold(
+        body: SafeArea(
+          child: Column(
             children: [
               CustomAppBarInside(
                 text1: "Doctors List",

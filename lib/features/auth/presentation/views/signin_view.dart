@@ -19,7 +19,7 @@ class SigninView extends StatelessWidget {
       child: Scaffold(
         // resizeToAvoidBottomInset: true,
         appBar: buildAppBar(context, title: 'Login'),
-        body: const SigninViewBodyBlocConsumer(),
+        body: const SafeArea(child: SigninViewBodyBlocConsumer()),
       ),
     );
   }

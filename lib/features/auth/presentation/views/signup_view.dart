@@ -25,7 +25,7 @@ class SignupView extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        body: const SignupViewBodyBlocConsumer(),
+        body: const SafeArea(child: SignupViewBodyBlocConsumer()),
       ),
     );
   }
