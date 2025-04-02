@@ -118,6 +118,12 @@ class _MapScreenState extends State<MapScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Maps'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios), // أيقونة تشبه iPhone
+          onPressed: () {
+            Navigator.pop(context); // إغلاق الشاشة عند الضغط
+          },
+        ),
       ),
       body: FlutterMap(
         mapController: mapController,
