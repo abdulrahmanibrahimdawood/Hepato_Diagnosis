@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/home/cubit/cubit/home_cubit.dart';
-import 'package:e_commerce/features/home/cubit/cubit/home_state.dart';
+import 'package:e_commerce/features/home/cubit/home_cubit/home_cubit.dart';
+import 'package:e_commerce/features/home/cubit/home_cubit/home_state.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/advice_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
