@@ -45,13 +45,6 @@ class CustomDrawer extends StatelessWidget {
             title: const Text('Logout'),
             onTap: () {},
           ),
-          ListTile(
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
-            leading: const Icon(Icons.dark_mode),
-            title: const Text('Dark mode'),
-            onTap: () {},
-          ),
         ],
       ),
     );
