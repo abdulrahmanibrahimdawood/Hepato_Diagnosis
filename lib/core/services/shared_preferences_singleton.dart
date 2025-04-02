@@ -16,4 +16,12 @@ class SharedPrefs {
   static getBool(String key) {
     return _instance.getBool(key) ?? false;
   }
+
+  static setBoolLogin(String key, bool value) {
+    _instance.setBool(key, value);
+  }
+
+  static getBoolLogin(String key) {
+    return _instance.getBool(key) ?? false;
+  }
 }
