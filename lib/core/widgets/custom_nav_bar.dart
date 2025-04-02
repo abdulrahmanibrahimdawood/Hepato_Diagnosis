@@ -76,7 +76,7 @@ class _MainPageState extends State<CustomNavBar> {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
+                color: Colors.grey.withValues(alpha: .2),
                 spreadRadius: 1,
                 blurRadius: 10,
               ),
