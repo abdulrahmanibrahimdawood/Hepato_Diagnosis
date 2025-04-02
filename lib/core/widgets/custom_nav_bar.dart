@@ -24,37 +24,6 @@ class _MainPageState extends State<CustomNavBar> {
     DoctorsView(),
   ];
 
-  static const List<BottomNavigationBarItem> _navigationItems = [
-    BottomNavigationBarItem(
-      icon: FaIcon(
-        FontAwesomeIcons.houseChimney,
-        size: 28,
-      ),
-      label: 'Home',
-    ),
-    BottomNavigationBarItem(
-      icon: FaIcon(
-        FontAwesomeIcons.magnifyingGlass,
-        size: 28,
-      ),
-      label: 'Analysis',
-    ),
-    BottomNavigationBarItem(
-      icon: FaIcon(
-        FontAwesomeIcons.circleQuestion,
-        size: 28,
-      ),
-      label: 'Questions',
-    ),
-    BottomNavigationBarItem(
-      icon: FaIcon(
-        FontAwesomeIcons.stethoscope,
-        size: 28,
-      ),
-      label: 'Doctors',
-    ),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -72,27 +41,57 @@ class _MainPageState extends State<CustomNavBar> {
           children: _pages,
         ),
         bottomNavigationBar: Container(
-          height: 65,
+          height: 70,
           decoration: BoxDecoration(
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withValues(alpha: .2),
-                spreadRadius: 1,
-                blurRadius: 10,
+                color: AppColor.kPrimaryColor.withValues(alpha: .4),
+                spreadRadius: 80,
+                blurRadius: 100,
               ),
             ],
           ),
           child: BottomNavigationBar(
             currentIndex: _selectedIndex,
             onTap: _onItemTapped,
-            items: _navigationItems,
+            items: List.generate(4, (index) {
+              return BottomNavigationBarItem(
+                icon: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: _selectedIndex == index
+                        ? AppColor.kPrimaryColor.withValues(alpha: .2)
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: FaIcon(
+                    index == 0
+                        ? FontAwesomeIcons.houseChimney
+                        : index == 1
+                            ? FontAwesomeIcons.magnifyingGlass
+                            : index == 2
+                                ? FontAwesomeIcons.circleQuestion
+                                : FontAwesomeIcons.stethoscope,
+                    size: 24,
+                  ),
+                ),
+                label: index == 0
+                    ? 'Home'
+                    : index == 1
+                        ? 'Analysis'
+                        : index == 2
+                            ? 'Questions'
+                            : 'Doctors',
+              );
+            }),
             type: BottomNavigationBarType.fixed,
             selectedItemColor: AppColor.kPrimaryColor,
             unselectedItemColor: Colors.grey,
             selectedFontSize: 12,
             unselectedFontSize: 12,
             elevation: 0,
-            backgroundColor: Colors.white,
+            backgroundColor: AppColor.kPrimaryColor.withValues(alpha: .4),
           ),
         ),
       ),
